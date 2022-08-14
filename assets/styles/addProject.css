@@ -177,22 +177,6 @@ select:focus {
   cursor: pointer;
 }
 
-
-.preview {
-  width: 40%;
-  display: flex;
-  margin-top: 5px;
-}
-
-.preview .photo__icon {
-  font-size: 20rem;
-}
-
-.img__preview {
-  width: 100%;
-  object-fit: fill;
-}
-
 .blog__container {
   width: 70%;
   margin: 0 auto;
@@ -297,6 +281,5 @@ select:focus {
   -webkit-box-orient: vertical;
   max-width: 100%;
   overflow: hidden;
-  text-overflow: ellipsis;
   height: 56px;
 }

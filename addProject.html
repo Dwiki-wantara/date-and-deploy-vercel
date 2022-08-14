@@ -31,11 +31,6 @@
     <section class="section__add-blog" id="add-blog">
       <div class="form__container">
         <h1>Post Blog</h1>
-        
-        <div class="form__alert">
-          <p id="error__msg"></p>
-          <p class="close__btn" onclick="closeAlert()"></p>
-        </div>
 
       <form action="" id="add-blog__form" autocomplete="off" onsubmit="addBlog(event)">
         <div class="input__group">
@@ -93,20 +88,22 @@
         <div class="image__group">
           <div class="uploadLeft">
             <label for="upload" class="upload__btn"></label>
-            <input type="file" id="upload" accept="image/*" onchange="preview(event.target.files[0])" />
+            <input type="file" id="upload" accept="image/*"  /> 
           </div>
 
+            <!-- onchange="preview(event.target.files[0])" -->
+            
           <div class="uploadRight">
             <img src="assets/images/file.png" alt="">
           </div>
-          
         </div>
 
-         <!-- Image Preview Container -->
+         <!-- Image Preview Container
         <div class="preview">
           <i class="photo__icon"></i>
           <img style="display: none" class="img__preview" />
-        </div>
+        </div> -->
+       
         <!-- Submit Button -->
         <div class="headBtnSubmit">
           <button type="submit" class="btn__submit">Submit</button>

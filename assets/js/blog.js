@@ -1,25 +1,26 @@
-// Image Preview Logic
-const photoIcon = document.querySelector(".preview .photo__icon"),
-  imgPreview = document.querySelector(".preview .img__preview"),
-  previewContainer = document.querySelector(".preview");
+// // Image Preview Logic
+// // const photoIcon = document.querySelector(".preview .photo__icon"),
+// //   imgPreview = document.querySelector(".preview .img__preview"),
+// //   previewContainer = document.querySelector(".preview");
 
-function preview(event) {
-  const reader = new FileReader();
+// // function preview(event) {
+// //   const reader = new FileReader();
 
-  reader.onloadend = () => {
-    previewContainer.style.backgroundColor = "transparent";
-    photoIcon.style.display = "none";
-    imgPreview.style.display = "block";
-    imgPreview.src = reader.result;
-  };
+// //   reader.onloadend = () => {
+// //     previewContainer.style.backgroundColor = "transparent";
+// //     photoIcon.style.display = "none";
+// //     imgPreview.style.display = "block";
+// //     imgPreview.src = reader.result;
+// //   };
 
-  reader.readAsDataURL(event);
-}
+//   reader.readAsDataURL(event);
+// }
 
 // Add Blog Logic
+// const errAlert = document.querySelector(".form__alert");
 
 let blogs = [];
-const errAlert = document.querySelector(".form__alert");
+
 
 function addBlog(event) {
   event.preventDefault();
@@ -28,17 +29,16 @@ function addBlog(event) {
   const projectName = document.getElementById("name").value,
     startDate = document.getElementById("start-date").value,
     endDate = document.getElementById("end-date").value,
-    description = document.getElementById("description").value,
-    errMsg = document.getElementById("error__msg");
+    description = document.getElementById("description").value
+    
+   // image
+    let image = document.getElementById("upload");
+    image = URL.createObjectURL(image.files[0]);
 
+ 
   if (!projectName || !startDate || !endDate || !description) {
   return alert('Form cannot be empty')
   }
-
-  // image
-  let image = document.getElementById("upload");
-
-  image = URL.createObjectURL(image.files[0]);
 
   const blog = {
     projectName,
@@ -73,10 +73,6 @@ function filterChecboxChecked() {
   return cbValue;
 }
 
-// Closing Alert
-function closeAlert() {
-  errAlert.style.display = "none";
-}
 
 // Render Blog
 function renderBlog() {
@@ -114,41 +110,6 @@ function renderBlog() {
         `;
   }
 }
-
-function renderTechIcons(techs) {
-  const blogTech = document.querySelector(".blog__tech");
-
-  for (let i = 0; i < techs.length; i++) {
-    blogTech.innerHTML += `<i class="fa-brands fa-${techs[i]}"></i>`;
-  }
-}
-
-// const month = [
-//   "January",
-//   "February",
-//   "March",
-//   "April",
-//   "May",
-//   "June",
-//   "July",
-//   "August",
-//   "September",
-//   "October",
-//   "November",
-//   "December",
-// ];
-
-// // Time Format
-// function timeFormat(time) {
-//   const date = time.getDate();
-//   const monthIndex = time.getMonth();
-//   const year = time.getFullYear();
-
-//   const hour = time.getHours();
-//   const minute = time.getMinutes();
-
-//   return `${date} ${month[monthIndex]} ${year} ${hour}:${minute} WIB`;
-// }
 
 // Count Project Duration
 function countDuration(startDate, endDate) {
