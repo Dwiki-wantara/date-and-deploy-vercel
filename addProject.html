@@ -1,0 +1,124 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/styles/addProject.css">
+    <link rel="stylesheet" href="assets/styles/nav.css">
+    <title>Add Project</title>
+</head>
+<body>
+    <nav>
+        <div class="navLeft">
+            <a href="index.html"><img src="assets/images/logo.png" alt="logo" style="width: 40px;"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="addProject.html">MyProject</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="navRight">
+            <ul>
+                <li> 
+                    <a href="contact.html" class="contacMe">Contact Me</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <section class="section__add-blog" id="add-blog">
+      <div class="form__container">
+        <h1>Post Blog</h1>
+        
+        <div class="form__alert">
+          <p id="error__msg"></p>
+          <p class="close__btn" onclick="closeAlert()"></p>
+        </div>
+
+      <form action="" id="add-blog__form" autocomplete="off" onsubmit="addBlog(event)">
+        <div class="input__group">
+          <label for="name">Project Name</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your project name"
+          />
+        </div>
+
+        <div class="row-input__group">
+          <div class="half-input__group">
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" />
+          </div>
+
+          <div class="half-input__group">
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" />
+          </div>
+        </div>
+
+        <div class="input__group">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+        </div>
+
+        <h4 class="tech">Technologies</h4>
+        <div class="checkboxes">
+          <div class="left">
+            <div class="checkbox__group">
+              <input type="checkbox" name="node" id="node" value="node" />
+              <label for="node">Node Js</label>
+            </div>
+            <div class="checkbox__group">
+              <input type="checkbox" name="react" id="react" value="react" />
+              <label for="react">React Js</label>
+            </div>
+
+          </div>
+          <div class="right">
+            <div class="checkbox__group">
+              <input type="checkbox" name="laravel" id="laravel" value="laravel"/>
+              <label for="laravel">Laravel</label>
+            </div>
+            <div class="checkbox__group">
+              <input type="checkbox" name="php" id="php" value="php" />
+              <label for="php">Php</label>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="image__group">
+          <div class="uploadLeft">
+            <label for="upload" class="upload__btn"></label>
+            <input type="file" id="upload" accept="image/*" onchange="preview(event.target.files[0])" />
+          </div>
+
+          <div class="uploadRight">
+            <img src="assets/images/file.png" alt="">
+          </div>
+          
+        </div>
+
+         <!-- Image Preview Container -->
+        <div class="preview">
+          <i class="photo__icon"></i>
+          <img style="display: none" class="img__preview" />
+        </div>
+        <!-- Submit Button -->
+        <div class="headBtnSubmit">
+          <button type="submit" class="btn__submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    
+
+    <div class="blog__container" id="blog-container"></div>
+  </section>
+
+  <script src="assets/js/blog.js"></script>
+
+</body>
+</html>
