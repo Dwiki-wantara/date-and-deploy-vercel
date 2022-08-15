@@ -26,7 +26,7 @@ function addBlog(event) {
   event.preventDefault();
 
   // Input Value
-  const projectName = document.getElementById("name").value,
+    projectName = document.getElementById("name").value,
     startDate = document.getElementById("start-date").value,
     endDate = document.getElementById("end-date").value,
     description = document.getElementById("description").value
@@ -40,7 +40,7 @@ function addBlog(event) {
   return alert('Form cannot be empty')
   }
 
-  const blog = {
+    let blog = {
     projectName,
     description,
     image,
